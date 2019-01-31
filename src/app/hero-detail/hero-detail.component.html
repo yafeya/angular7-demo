@@ -1,4 +1,18 @@
 <div *ngIf="IsValid">
-  <h1>{{ SelectedHero.Name }}</h1>
-  <h4>{{ SelectedHero.Power }}</h4>
+  <div><input type="button" (click)="Edit()" [value]="StatusTitle" /></div>
+  <div>
+    <h1 *ngIf="!IsEditing">{{ SelectedHero.Name }}</h1>
+    <div *ngIf="IsEditing"><span>Hero's Name:</span></div>
+    <div><input type="text" *ngIf="IsEditing" [(ngModel)]="HeroName" /></div>
+  </div>
+  <div>
+    <h4 *ngIf="!IsEditing">{{ SelectedHero.Power }}</h4>
+    <div *ngIf="IsEditing"><span>Hero's Power:</span></div>
+    <div>
+      <textarea name="hero-power-text" cols="40" rows="5" *ngIf="IsEditing" [(ngModel)]="HeroPower"></textarea>
+    </div>
+  </div>
+  <div>
+    <input type="button" *ngIf="IsEditing" (click)="Submit()" value="Submit" appSubmitAlert />
+  </div>
 </div>
