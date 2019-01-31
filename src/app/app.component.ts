@@ -9,13 +9,8 @@ import { Hero } from './hero';
 })
 export class AppComponent implements OnInit {
   title = 'angular-demo';
-  private mHeroes: Array<Hero> = [];
-
-  constructor(private heroProvider: HeroProviderService) { }
   
-  get Heroes(): Array<Hero> { 
-    return this.mHeroes;
-  }
+  constructor(private heroProvider: HeroProviderService) { }
 
   ngOnInit(): void {
     this.heroProvider.AddHeroes([
@@ -26,9 +21,5 @@ export class AppComponent implements OnInit {
       new Hero('5', 'Halk Eye', 'Arrow Sniper'),
       new Hero('6', 'Black Widow', 'Expert of fighting & interrogating')
     ]);
-  }
-
-  UpdateHeroList(): void { 
-    this.mHeroes = this.heroProvider.GetHeroes();
   }
 }

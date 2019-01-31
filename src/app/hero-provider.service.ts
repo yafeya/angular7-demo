@@ -7,11 +7,20 @@ import { Hero } from './hero';
 export class HeroProviderService {
 
   private mHeroes: Array<Hero> = [];
+  private mSelectedHero: Hero = undefined;
 
   constructor() { }
 
   GetHeroes(): Array<Hero>{
     return this.mHeroes;
+  }
+
+  get SelectedHero(): Hero { 
+    return this.mSelectedHero;
+  }
+
+  set SelectedHero(value: Hero) { 
+    this.mSelectedHero = value;
   }
 
   AddHeroes(heroes: Array<Hero>) {

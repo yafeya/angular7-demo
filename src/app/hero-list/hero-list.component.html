@@ -1,0 +1,6 @@
+<input type="button" (click)="UpdateHeroList()" value="Update Heroes">
+
+<div>
+  <div class="hero" *ngFor="let hero of Heroes" (click)="OnSelectedHero(hero)">{{hero.Name}}</div>
+  <app-hero-detail></app-hero-detail>
+</div>

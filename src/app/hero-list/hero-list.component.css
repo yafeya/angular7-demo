@@ -1,0 +1,6 @@
+.hero {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: gray;
+  cursor: pointer;
+}
