@@ -1,0 +1,12 @@
+1. ng new my-lib-app
+2. cd my-lib-app
+3. ng g library my-lib
+4. Add what you want to add in the module.
+5. ng build my-lib
+6. test it with unit-test or in your my-lib-app.
+7. npm publish -- that will publish your library onto npm.
+   Before that you should run npm login, with your npm account.
+   1) Remove the private attribute in package.json.
+   2) cd dist/my-lib
+   3) npm publish
+8. Install your library in your app.

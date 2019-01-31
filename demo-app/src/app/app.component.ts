@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroProviderService } from './hero-provider.service';
 import { Hero } from './hero';
+import 'yafeya-my-lib';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,10 @@ export class AppComponent implements OnInit {
   constructor(private heroProvider: HeroProviderService) { }
 
   ngOnInit(): void {
+    if (!String.IsNullOrEmpty(this.title)) {
+      console.log(`title is not empty, title = ${this.title}`);
+    }
+
     this.heroProvider.AddHeroes([
       new Hero('1', 'Captain America', 'Super Soldier'),
       new Hero('2', 'Iron Man', 'Armor & Millionare'),
